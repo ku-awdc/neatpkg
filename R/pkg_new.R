@@ -22,7 +22,7 @@ pkg_new <- function(package_name, directory=getwd()){
     cat("# ", package_name, "\nAdd a description of what your package does here\n", sep="", file="README.md")
   }
 
-  copy_files <- system.file("template", package="neatpkg") |> list.files(include.dirs=TRUE)
+  copy_files <- system.file("templates", "package", package="neatpkg") |> list.files(include.dirs=TRUE)
 
   ff <- list.files(all.files=FALSE)
   if(length(ff)!=1L || ff!="README.md"){
@@ -33,13 +33,11 @@ pkg_new <- function(package_name, directory=getwd()){
     warning("Unexpected files/folders were detected in the package directory:\n", paste(ff[ff!="README.md"], collapse=", "), "\nThe package will be created, but you may get warnings from R CMD check due to these unexpected files/folders")
   }
 
-  cat("Creating package structure for '", package_name, "'...\n")
+  cat("Creating package structure for '", package_name, "'...\n", sep="")
 
-  copy_files <- c(system.file("template", package="neatpkg") |> list.files(include.dirs=TRUE), ".gitignore", ".Rbuildignore")
-  # Temporarily exclude data and data-raw:
-  copy_files <- copy_files[!copy_files %in% c("data","data-raw")]
+  copy_files <- c(system.file("templates", "package", package="neatpkg") |> list.files(include.dirs=TRUE), ".gitignore", ".Rbuildignore")
 
-  ss <- file.copy(file.path(system.file("template", package="neatpkg"), copy_files), getwd(), recursive = TRUE)
+  ss <- file.copy(file.path(system.file("templates", "package", package="neatpkg"), copy_files), getwd(), recursive = TRUE)
   if(any(!ss)) stop("One or more file failed to copy - check write permissions?")
 
   cat("Adding package name...\n")

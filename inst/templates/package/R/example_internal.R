@@ -20,5 +20,5 @@ example_internal <- function(argument){
 }
 
 
-## If we need the package to remember things, we can set them in an environment:
+## If we need the package to remember things within this R session, we can set them in an environment:
 package_env <- new.env()
