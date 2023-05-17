@@ -35,7 +35,7 @@ pkg_new <- function(package_name, directory=getwd()){
 
   cat("Creating package structure for '", package_name, "'...\n", sep="")
 
-  copy_files <- c(system.file("templates", "package", package="neatpkg") |> list.files(include.dirs=TRUE), ".gitignore", ".Rbuildignore")
+  copy_files <- system.file("templates", "package", package="neatpkg") |> list.files(include.dirs=TRUE)
 
   ss <- file.copy(file.path(system.file("templates", "package", package="neatpkg"), copy_files), getwd(), recursive = TRUE)
   if(any(!ss)) stop("One or more file failed to copy - check write permissions?")
@@ -65,9 +65,13 @@ pkg_new <- function(package_name, directory=getwd()){
   writeLines(vig, "vignettes/template.Rmd")
   file.rename("vignettes/template.Rmd", paste0("vignettes/", package_name, ".Rmd"))
 
-  rbi <- readLines(".Rbuildignore")
+  rbi <- readLines("Rbuildignore")
   rbi <- gsub("template", package_name, rbi)
-  writeLines(rbi, ".Rbuildignore")
+  writeLines(rbi, "Rbuildignore")
+  file.rename("Rbuildignore", ".Rbuildignore")
+
+  file.rename("gitignore", ".gitignore")
+  file.rename("local/gitignore", "local/.gitignore")
 
   cat("Running roxygen...\n")
   document(roclets=c("rd", "collate", "namespace"))
