@@ -1,0 +1,36 @@
+---
+title: "neatpkg"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tidypkg}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library("neatpkg")
+```
+
+## Instructions
+
+Create new repo with README (no gitignore or license)
+
+Clone to computer by e.g. clicking on "Set up in Desktop"
+
+Click clone and close GitHub Desktop for now
+
+Change working dir to inside the folder or the folder above it (make tidy_pkg smart detect if it is in a folder with the same name as package)
+
+Run tidy_pkg
+
+Then go to GitHub desktop and click on publish to branch
+
+
+What to edit etc

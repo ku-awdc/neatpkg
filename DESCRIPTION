@@ -1,0 +1,30 @@
+Package: neatpkg
+Title: Create r Packages Quickly, Using the ku-awdc Recommended Layout
+Date: 2023-05-17
+Version: 0.2.0-1
+Authors@R: 
+    person(given = "Matt",
+           family = "Denwood",
+           role = c("aut", "cre"),
+           email = "md@sund.ku.dk")
+Description: What the package does (one paragraph).
+License: GPL-3
+Encoding: UTF-8
+Depends:
+  R (>= 4.1.0)
+Imports:
+  devtools,
+  rlang,
+  dplyr,
+  tibble,
+  usethis,
+  spelling,
+  knitr,
+  rmarkdown,
+  testthat (>= 2.1.0)
+Suggests:
+  fortunes
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Language: en-GB
