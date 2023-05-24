@@ -1,0 +1,14 @@
+Copy src
+Add Rcpp to Depends and LinkingTo
+Add SystemRequirements: C++17
+
+Add to top of Rcpp_wrappers.R:
+#' @importFrom Rcpp loadModule
+#' @useDynLib template, .registration = TRUE
+
+Then run roxygen
+
+Then add to Rcpp_wrappers.R:
+loadModule("example_module", TRUE)
+
+Then add example wrapper R code
