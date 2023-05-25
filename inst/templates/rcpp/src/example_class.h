@@ -39,7 +39,7 @@ public:
   }
   
 private:
-  int m_number;
+  const int m_number;
   
 };
 
