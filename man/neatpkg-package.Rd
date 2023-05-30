@@ -4,7 +4,7 @@
 \name{neatpkg-package}
 \alias{neatpkg}
 \alias{neatpkg-package}
-\title{neatpkg: Create r Packages Quickly, Using the ku-awdc Recommended Layout}
+\title{neatpkg: Create R Packages Quickly, Using the KU-AWDC Recommended Layout}
 \description{
 What the package does (one paragraph).
 }

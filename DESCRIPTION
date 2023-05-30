@@ -1,7 +1,7 @@
 Package: neatpkg
-Title: Create r Packages Quickly, Using the ku-awdc Recommended Layout
-Date: 2023-05-17
-Version: 0.2.0-1
+Title: Create R Packages Quickly, Using the KU-AWDC Recommended Layout
+Date: 2023-05-30
+Version: 0.2.1-1
 Authors@R: 
     person(given = "Matt",
            family = "Denwood",
@@ -17,6 +17,7 @@ Imports:
   rlang,
   dplyr,
   tibble,
+  R6,
   usethis,
   spelling,
   knitr,
