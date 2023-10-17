@@ -3,6 +3,8 @@
 #' @param package_name name of the package (optional)
 #' @param directory working directory containing the package
 #'
+#' @import R6
+#'
 #' @export
 pkg_R6 <- function(package_name, directory=getwd()){
 

@@ -12,7 +12,7 @@
 #' example_instance$value
 #'
 #' @export
-ExampleR6 <- R6Class("ExampleR6")
+ExampleR6 <- R6::R6Class("ExampleR6")
 
 # A private field:
 ExampleR6$set("private", "m_value", numeric())
